@@ -6,11 +6,13 @@ import { helloWorldRouter } from 'routes'
 
 const { DATABASE_URL } = config
 
-const app = express()
-const db = mysql.createConnection(DATABASE_URL)
-db.connect((err) => console.log(err))
+export const runServer = () => {
+  const app = express()
+  const db = mysql.createConnection(DATABASE_URL)
+  db.connect((err) => console.log(err))
 
-app.use(express.json())
-app.use('/helloworld', helloWorldRouter)
+  app.use(express.json())
+  app.use('/helloworld', helloWorldRouter)
 
-app.listen(300, () => console.log('Server Started'))
+  app.listen(3000, () => console.log('Server Started'))
+}
