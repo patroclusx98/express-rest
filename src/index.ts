@@ -1,3 +1,3 @@
-import { runServer } from 'app'
+import * as App from 'app'
 
-runServer()
+App.runServer()
